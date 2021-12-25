@@ -12,6 +12,7 @@ public class GUI implements ActionListener {
     private ArrayList<JTextField> userText = new ArrayList<>();
 
 
+
     public GUI() {
         // the panel with the button and text
         panel = new JPanel();
@@ -51,8 +52,8 @@ public class GUI implements ActionListener {
         frame.repaint();
     }
 
-    public void addButton(String buttontext){
-        JButton butt = new JButton(buttontext);
+    public void addButton(String buttonText){
+        JButton butt = new JButton(buttonText);
         butt.setBackground(Color.lightGray);
         butt.setForeground(Color.black);
         panel.add(butt);
@@ -64,7 +65,6 @@ public class GUI implements ActionListener {
 
     public void addUserText(){
         JTextField textField = new JTextField();
-        textField.setBounds(100,20,165,25);
         panel.add(textField);
         userText.add(textField);
         frame.revalidate();
@@ -109,5 +109,13 @@ public class GUI implements ActionListener {
         labels.clear();
         buttons.clear();
         userText.clear();
+    }
+
+    public ArrayList<JButton> getButtons() {
+        return buttons;
+    }
+
+    public ArrayList<JLabel> getLabels() {
+        return labels;
     }
 }
