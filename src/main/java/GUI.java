@@ -104,6 +104,10 @@ public class GUI implements ActionListener {
         return userText;
     }
 
+    public void setUserText(String text, int index){
+        userText.get(index).setText(text);
+    }
+
     public void clearPanel(){
         panel.removeAll();
         labels.clear();

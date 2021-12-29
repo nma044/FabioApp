@@ -15,15 +15,18 @@ public class SixtySeconds implements ActionListener {
     public int player = 0;
     public boolean timer = false;
     public boolean newTurn = false;
+    private Menu menu;
 
-    public SixtySeconds(GUI gu, ArrayList<Player> players) {
-        playerList = players;
+    public SixtySeconds(GUI gu, Menu men) {
+        playerList = men.getPlayerList();
         gui = gu;
         gu.clearPanel();
         gu.addLabel("");
         gu.addCustomButton("", this);
+        gu.addCustomButton("Tilbake", men);
         label = gu.getLabels().get(0);
         button = gu.getButtons().get(0);
+        menu = men;
         newPlayerTurn();
     }
 
